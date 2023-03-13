@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         if (joystickMovement.joysticVect.y != 0)
         {
-            Debug.Log("Going Down");
+           // Debug.Log("Going Down");
             rb.velocity = new Vector2(joystickMovement.joysticVect.x * playerSpeed, joystickMovement.joysticVect.y * playerSpeed);
         }
         else
@@ -25,5 +25,45 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        
+
+        if (other.CompareTag("Receiving"))
+        {
+            Debug.Log("Item is Received");
+            PlayerScore.Instance.UpdateScore();
+            NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving);
+        }
+
+        else if (other.CompareTag("LaserObstacal"))
+        {
+            
+        }
+
+        else if (other.CompareTag("IceSawStaticObstacal"))
+        {
+            
+        }
+        else if (other.CompareTag("IceSawMovingObstacal"))
+        {
+            
+        }
+        else if (other.CompareTag("DrainHoleObstacal"))
+        {
+            
+        }
+
+        else if (other.CompareTag("LeftBoundary"))
+        {
+            
+        }
+
+        else if (other.CompareTag("RightBoundary"))
+        {
+           
+        }
     }
 }
