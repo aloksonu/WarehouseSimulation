@@ -9,11 +9,14 @@ public class LevelPanel : MonoSingleton<LevelPanel>
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button btnContinue, btnBack;
+    //[SerializeField] private Button btnReceiving , btnPutaway, btnStorage , btnPicking , btnTransport , btnShipping;
+    internal string levelName;
+    //[SerializeField] private Button btnPutaway;
     private float _fadeDuration = 0.2f;
     private string _currentSceneName = "WarehouseGamePlay";
     void Start()
     {
-        _canvasGroup.UpdateState(false, 0);
+       // _canvasGroup.UpdateState(false, 0);
         btnContinue.onClick.AddListener(OnContinueButtonPressed);
         btnBack.onClick.AddListener(OnBackButtonPressed);
     }
@@ -22,7 +25,8 @@ public class LevelPanel : MonoSingleton<LevelPanel>
         btnContinue.onClick.RemoveAllListeners();
         btnBack.onClick.RemoveAllListeners();
     }
-    private void OnContinueButtonPressed()
+
+    internal void OnContinueButtonPressed()
     {
         _canvasGroup.UpdateState(true, _fadeDuration, () => {
             StartCoroutine(_loadGame());
