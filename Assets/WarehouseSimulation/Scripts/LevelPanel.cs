@@ -16,7 +16,7 @@ public class LevelPanel : MonoSingleton<LevelPanel>
     private string _currentSceneName = "WarehouseGamePlay";
     void Start()
     {
-       // _canvasGroup.UpdateState(false, 0);
+        _canvasGroup.UpdateState(false, 0);
         btnContinue.onClick.AddListener(OnContinueButtonPressed);
         btnBack.onClick.AddListener(OnBackButtonPressed);
     }

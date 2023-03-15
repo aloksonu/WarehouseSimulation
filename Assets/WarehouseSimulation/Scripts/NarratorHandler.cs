@@ -15,6 +15,7 @@ public class NarratorHandler : MonoSingleton<NarratorHandler>
     // Start is called before the first frame update
     void Start()
     {
+        canvasGroup.UpdateState(false, 0);
         btnClose.onClick.AddListener(BringOut);
     }
     private void OnDestroy()

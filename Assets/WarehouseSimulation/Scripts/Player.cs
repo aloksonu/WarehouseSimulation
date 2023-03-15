@@ -35,7 +35,15 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Item is Received");
             PlayerScore.Instance.UpdateScore();
-            NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving);
+            UiBgHandeler.Instance.BringIn();
+            NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NReceiving, () =>
+            {
+                NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving , ()=> {
+
+                    LevelComplete.Instance.BringIn();
+                });
+            });
+           // NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving);
         }
 
         else if (other.CompareTag("LaserObstacal"))
