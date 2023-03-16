@@ -10,9 +10,11 @@ public class PlayerScore : MonoSingleton<PlayerScore>
     [SerializeField] private TextMeshProUGUI scoreTextMeshProUGUI;
     private float _fadeDuration = 0.2f;
     private int score;
+   // private int subLevelNumber;
     void Start()
     {
         //_canvasGroup.UpdateState(false, 0);
+        //subLevelNumber = 1;
         Reset();
     }
     internal void BringIn()

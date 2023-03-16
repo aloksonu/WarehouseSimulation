@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     public JoystickMovement joystickMovement;
     public float playerSpeed;
     private Rigidbody2D rb;
+    private int subLevelNumber;
     void Start()
     {
+        subLevelNumber = 1;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,9 +33,14 @@ public class Player : MonoBehaviour
     {
         
 
-        if (other.CompareTag("Receiving"))
-        {
-            Debug.Log("Item is Received");
+       // if (LevelPanel.Instance.levelName == "Receiving" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+            if (subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+            {
+
+            other.gameObject.SetActive(false);
+
+            if (subLevelNumber == 8) { 
+
             PlayerScore.Instance.UpdateScore();
             UiBgHandeler.Instance.BringIn();
             NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NReceiving, () =>
@@ -43,35 +50,14 @@ public class Player : MonoBehaviour
                     LevelComplete.Instance.BringIn();
                 });
             });
-           // NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving);
+
+            }
+            subLevelNumber++;
         }
 
-        else if (other.CompareTag("LaserObstacal"))
+        else 
         {
             
-        }
-
-        else if (other.CompareTag("IceSawStaticObstacal"))
-        {
-            
-        }
-        else if (other.CompareTag("IceSawMovingObstacal"))
-        {
-            
-        }
-        else if (other.CompareTag("DrainHoleObstacal"))
-        {
-            
-        }
-
-        else if (other.CompareTag("LeftBoundary"))
-        {
-            
-        }
-
-        else if (other.CompareTag("RightBoundary"))
-        {
-           
         }
     }
 }
