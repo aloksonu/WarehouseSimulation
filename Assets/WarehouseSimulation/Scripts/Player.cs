@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private int subLevelNumber;
     void Start()
     {
+       // LevelPanel.Instance.levelName = "Receiving";  // testin purpose later removed
         subLevelNumber = 1;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -33,8 +34,8 @@ public class Player : MonoBehaviour
     {
         
 
-       // if (LevelPanel.Instance.levelName == "Receiving" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
-            if (subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+        if (LevelPanel.Instance.levelName == "Receiving" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+          //  if (subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
             {
 
             other.gameObject.SetActive(false);
