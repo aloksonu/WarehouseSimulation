@@ -15,6 +15,8 @@ public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
     private float _fadeDuration = 0.4f;
 
     public string NReceiving = "The warehouse receiving process steps include delivery of the products, unloading from the delivery trunk, and inventory storage";
+    public string NPutaway = "Put-away is actually one of the key components in terms of warehouse management." +
+    " Its basically process of storing goods in a warehouse. Here we take items from inventory and them put them on the different pallet or shelves.";
     void Start()
     {
         _canvasGroup.UpdateState(false, 0);

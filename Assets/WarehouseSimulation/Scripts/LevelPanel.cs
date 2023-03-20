@@ -52,8 +52,8 @@ public class LevelPanel : MonoSingleton<LevelPanel>
         // yield return SceneManager.UnloadSceneAsync(_currentSceneName);
         LoadingPanel.Instance.BringIn();
         yield return SceneManager.LoadSceneAsync(_currentSceneName, LoadSceneMode.Additive);
-        BringOut();
+        //BringOut();
         LoadingPanel.Instance.BringOut();
-        StartPanel.Instance.BringIn();
+        //StartPanel.Instance.BringIn();
     }
 }

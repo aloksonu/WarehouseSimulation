@@ -11,6 +11,7 @@ public class NarratorHandler : MonoSingleton<NarratorHandler>
     [SerializeField] private Image img;
 
     public Sprite spriteReceiving;
+    public Sprite spritePutaway;
     private const float _fadeDuration = 0.2f;
     // Start is called before the first frame update
     void Start()

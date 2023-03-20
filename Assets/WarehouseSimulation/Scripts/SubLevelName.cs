@@ -24,4 +24,9 @@ public enum SubLevelNames
     NewSkuChecks = 6,
     PRCChecks = 7,
     QAChecks = 8,
+
+    PutawayCartons = 9,
+    Hanging = 10,
+    Oversized = 11,
+
 }
