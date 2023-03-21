@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 6086
+  controlID: 14657
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 6142
+  controlID: 14592
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -653,9 +653,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6238638, y: -1.6441253, z: 0.01897257}
+    m_Target: {x: 0, y: -0.9074075, z: 90}
     speed: 2
-    m_Value: {x: -0.6238638, y: -1.6441253, z: 0.01897257}
+    m_Value: {x: 0, y: -0.9074075, z: 90}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -706,9 +706,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.103763
+    m_Target: 10.672854
     speed: 2
-    m_Value: 8.103763
+    m_Value: 10.672854
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -765,9 +765,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2eab0000
-      m_LastClickedID: 43822
-      m_ExpandedIDs: 08cfffff42d4ffff34daffff9adaffff24e1ffff42f9ffff46f9ffff48f9ffffcef9ffff26fbffff16620000bc710000ea7100003e72000072720000c87200001c7300005e93000068930000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 52b4ffffb8b4ffff3eb7ffff70bbffffc4bbfffff2ceffff56cfffff38f2ffff96f8fffff46300002264000076640000aa64000054650000967f0000f0a10000faa100001ea2000072a20000a6a20000fca2000050a3000084ab000026b60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -833,22 +833,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/WarehouseSimulation/Scenes
+    - Assets/WarehouseSimulation/Sprites
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/WarehouseSimulation/Scenes
+  - Assets/WarehouseSimulation/Sprites
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Workspace\WarehouseSimulation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a6610000
-    m_LastClickedID: 24998
-    m_ExpandedIDs: 00000000766100009461000000ca9a3b
+    m_SelectedIDs: fa610000
+    m_LastClickedID: 25082
+    m_ExpandedIDs: 00000000e0610000f461000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -876,7 +876,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007661000000ca9a3b
+    m_ExpandedIDs: 00000000e061000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -904,7 +904,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: b261000006610000
+    m_ExpandedInstanceIDs: b2610000066100003a850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

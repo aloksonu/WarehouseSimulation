@@ -49,6 +49,18 @@ public class Player : MonoSingleton<Player>
                 g.SetActive(false);
             gameObjectsSubProcess[1].SetActive(true);
         }
+        else if (LevelPanel.Instance.levelName == "InventoryManagement")
+        {
+            foreach (GameObject g in gameObjectsSubProcess)
+                g.SetActive(false);
+            gameObjectsSubProcess[2].SetActive(true);
+        }
+        else if (LevelPanel.Instance.levelName == "Picking")
+        {
+            foreach (GameObject g in gameObjectsSubProcess)
+                g.SetActive(false);
+            gameObjectsSubProcess[3].SetActive(true);
+        }
     }
 
     internal void SetPlayerPosition()
@@ -95,6 +107,52 @@ public class Player : MonoSingleton<Player>
                 NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPutaway, () =>
                 {
                     NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePutaway, () => {
+
+                        LevelComplete.Instance.BringIn();
+                    });
+                });
+
+            }
+            subLevelNumber++;
+        }
+
+        else if (LevelPanel.Instance.levelName == "InventoryManagement" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+
+        {
+
+            other.gameObject.SetActive(false);
+
+            if (subLevelNumber == 3)
+            {
+
+                PlayerScore.Instance.UpdateScore();
+                UiBgHandeler.Instance.BringIn();
+                NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NInventoryManagement, () =>
+                {
+                    NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteInventoryManagement, () => {
+
+                        LevelComplete.Instance.BringIn();
+                    });
+                });
+
+            }
+            subLevelNumber++;
+        }
+
+        else if (LevelPanel.Instance.levelName == "Picking" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+
+        {
+
+            other.gameObject.SetActive(false);
+
+            if (subLevelNumber == 2)
+            {
+
+                PlayerScore.Instance.UpdateScore();
+                UiBgHandeler.Instance.BringIn();
+                NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPicking, () =>
+                {
+                    NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePicking, () => {
 
                         LevelComplete.Instance.BringIn();
                     });

@@ -27,7 +27,7 @@ public enum LevelsName
     NotSet = -1,
     Receiving = 0,
     Putaway = 1,
-    Storage = 2,
+    InventoryManagement = 2,
     Picking = 3,
     Transport = 4,
     Shipping = 5,

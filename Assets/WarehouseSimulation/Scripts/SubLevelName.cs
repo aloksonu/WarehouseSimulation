@@ -29,4 +29,11 @@ public enum SubLevelNames
     Hanging = 10,
     Oversized = 11,
 
+    Relocate = 12,
+    AuditLocation = 13,
+    Consolidation = 14,
+
+    Standard = 15,
+    HangingPicking = 16,
+
 }
