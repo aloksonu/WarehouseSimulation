@@ -73,24 +73,27 @@ public class Player : MonoSingleton<Player>
         
 
         if (LevelPanel.Instance.levelName == "Receiving" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
-          //  if (subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
             {
 
             other.gameObject.SetActive(false);
-             NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber-1]);
-            if (subLevelNumber == 8) { 
+            if (subLevelNumber < 8)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber-1]);
+            if (subLevelNumber == 8) {
 
-            PlayerScore.Instance.UpdateScore();
-            UiBgHandeler.Instance.BringIn();
-            NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NReceiving, () =>
-            {
-                NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving , ()=> {
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber - 1],()=> {
 
-                    LevelComplete.Instance.BringIn();
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NReceiving, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteReceiving, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
+                    });
+
                 });
-            });
-
             }
+            PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
         }
        else if (LevelPanel.Instance.levelName == "Putaway" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
@@ -98,21 +101,25 @@ public class Player : MonoSingleton<Player>
         {
 
             other.gameObject.SetActive(false);
-
+            if (subLevelNumber < 3)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPutaway[subLevelNumber - 1]);
             if (subLevelNumber == 3)
             {
 
-                PlayerScore.Instance.UpdateScore();
-                UiBgHandeler.Instance.BringIn();
-                NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPutaway, () =>
-                {
-                    NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePutaway, () => {
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPutaway[subLevelNumber - 1], () => {
 
-                        LevelComplete.Instance.BringIn();
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPutaway, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePutaway, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
                     });
-                });
 
+                });
             }
+            PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
         }
 
@@ -121,21 +128,25 @@ public class Player : MonoSingleton<Player>
         {
 
             other.gameObject.SetActive(false);
-
+            if (subLevelNumber < 3)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NInventoryManagement[subLevelNumber - 1]);
             if (subLevelNumber == 3)
             {
 
-                PlayerScore.Instance.UpdateScore();
-                UiBgHandeler.Instance.BringIn();
-                NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NInventoryManagement, () =>
-                {
-                    NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteInventoryManagement, () => {
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NInventoryManagement[subLevelNumber - 1], () => {
 
-                        LevelComplete.Instance.BringIn();
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NInventoryManagement, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteInventoryManagement, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
                     });
-                });
 
+                });
             }
+            PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
         }
 
@@ -144,21 +155,25 @@ public class Player : MonoSingleton<Player>
         {
 
             other.gameObject.SetActive(false);
-
+            if (subLevelNumber < 2)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPicking[subLevelNumber - 1]);
             if (subLevelNumber == 2)
             {
 
-                PlayerScore.Instance.UpdateScore();
-                UiBgHandeler.Instance.BringIn();
-                NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPicking, () =>
-                {
-                    NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePicking, () => {
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPicking[subLevelNumber - 1], () => {
 
-                        LevelComplete.Instance.BringIn();
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPicking, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePicking, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
                     });
-                });
 
+                });
             }
+            PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
         }
 

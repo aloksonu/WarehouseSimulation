@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,10 @@ public class LevelComplete : MonoSingleton<LevelComplete>
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button btnNext, btnHome;
+    [SerializeField] private TextMeshProUGUI gameCompleteTextMeshProUGUI;
     private float _fadeDuration = 0.2f;
+
+    private string _gameCompleteText ="Congratulation To Complete";
 
     void Start()
     {
@@ -23,6 +27,8 @@ public class LevelComplete : MonoSingleton<LevelComplete>
     }
     internal void BringIn()
     {
+        //gameCompleteTextMeshProUGUI.text = $"{_gameCompleteText}{LevelPanel.Instance.levelName}";
+        gameCompleteTextMeshProUGUI.text = _gameCompleteText + " " + LevelPanel.Instance.levelName;
         _canvasGroup.UpdateState(true, _fadeDuration);
     }
     internal void BringOut()

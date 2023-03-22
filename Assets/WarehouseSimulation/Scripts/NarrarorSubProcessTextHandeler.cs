@@ -16,14 +16,9 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
     private float _fadeDuration = 0.2f;
 
     internal string[] NReceiving = new string[8];
-    //public string NTipping = "1";
-    //public string OpenTrailer = "2";
-    //public string AssignLane = "3";
-    //public string CloseTrailer = "4";
-    //public string ManualReceipt = "5";
-    //public string NewSkuChecks = "6";
-    //public string PRCChecks = "7";
-    //public string QAChecks = "8";
+    internal string[] NPutaway = new string[3];
+    internal string[] NInventoryManagement = new string[3];
+    internal string[] NPicking = new string[3];
 
     public bool isNarratorOpen = false;
     void Start()
@@ -35,14 +30,26 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
 
     private void SetNarrator()
     {
-        NReceiving[0] = "1";
-        NReceiving[1] = "2";
-        NReceiving[2] = "3";
-        NReceiving[3] = "4";
-        NReceiving[4] = "5";
-        NReceiving[5] = "6";
-        NReceiving[6] = "7";
-        NReceiving[7] = "8";
+        NReceiving[0] = "Required One Liner Definition";
+        NReceiving[1] = "Required One Liner Definition";
+        NReceiving[2] = "Required One Liner Definition";
+        NReceiving[3] = "Required One Liner Definition";
+        NReceiving[4] = "Required One Liner Definition";
+        NReceiving[5] = "Required One Liner Definition";
+        NReceiving[6] = "Required One Liner Definition";
+        NReceiving[7] = "Required One Liner Definition";
+
+        NPutaway[0] = "Required One Liner Definition";
+        NPutaway[1] = "Required One Liner Definition";
+        NPutaway[2] = "Required One Liner Definition";
+
+        NInventoryManagement[0] = "Required One Liner Definition";
+        NInventoryManagement[1] = "Required One Liner Definition";
+        NInventoryManagement[2] = "Required One Liner Definition";
+
+        NPicking[0] = "Required One Liner Definition";
+        NPicking[1] = "Required One Liner Definition";
+        NPicking[2] = "Required One Liner Definition";
     }
 
     private void OnDestroy()
@@ -76,14 +83,22 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
 
     internal void BringOutNarrator()
     {
-
         isNarratorOpen = false;
-        _canvasGroup.UpdateState(false, _fadeDuration, () => {
+        if (_onCompleteNarrator != null)
+        {
+            _canvasGroup.UpdateState(false, _fadeDuration, () => {
 
                 _onCompleteNarrator();
+                // isNarratorOpen = false;
+                _onCompleteNarrator = null;
+            });
+        }
+        else { 
+        _canvasGroup.UpdateState(false, _fadeDuration, () => {
                // isNarratorOpen = false;
                 _onCompleteNarrator = null;
             });
+        }
 
     }
 

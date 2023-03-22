@@ -30,10 +30,10 @@ public class PlayerScore : MonoSingleton<PlayerScore>
     {
         score = 0;
     }
-    internal void UpdateScore()
+    internal void UpdateScore(int s)
     {
 
-        score += 10;
+        score += s;
         scoreTextMeshProUGUI.text = score.ToString();
       
     }
