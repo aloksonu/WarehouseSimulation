@@ -23,7 +23,7 @@ public class Player : MonoSingleton<Player>
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (joystickMovement.joysticVect.y != 0)
+        if (joystickMovement.joysticVect.y != 0  && NarrarorSubProcessTextHandeler.Instance.isNarratorOpen==false)
         {
            // Debug.Log("Going Down");
             rb.velocity = new Vector2(joystickMovement.joysticVect.x * playerSpeed, joystickMovement.joysticVect.y * playerSpeed);
@@ -77,7 +77,7 @@ public class Player : MonoSingleton<Player>
             {
 
             other.gameObject.SetActive(false);
-
+             NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber-1]);
             if (subLevelNumber == 8) { 
 
             PlayerScore.Instance.UpdateScore();
