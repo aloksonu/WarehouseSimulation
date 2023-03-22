@@ -30,14 +30,15 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
 
     private void SetNarrator()
     {
-        NReceiving[0] = "Required One Liner Definition";
-        NReceiving[1] = "Required One Liner Definition";
-        NReceiving[2] = "Required One Liner Definition";
-        NReceiving[3] = "Required One Liner Definition";
-        NReceiving[4] = "Required One Liner Definition";
-        NReceiving[5] = "Required One Liner Definition";
-        NReceiving[6] = "Required One Liner Definition";
-        NReceiving[7] = "Required One Liner Definition";
+        NReceiving[0] = "Tipping: Offloading goods and verifying against the Purchase requisition"; //Tipping
+        NReceiving[1] = "Open Trailer: Is a step in the system to notify the trailer is opened for verification and tipping"; //Open Traile
+        NReceiving[2] = "Assign Lane: large number of shipments or carriers being used every day."; //Assign Lane
+        NReceiving[3] = "Close Trailer: Once all assigned goods as per PR is tipped the trailer close steps is done";//Close Trailer
+        NReceiving[4] = "Manual Receipt: for infrequent or irregular transactions, or for transactions conducted in the absence of" +
+            " a terminal, cash register or point of sale."; //Manual Receipt
+        NReceiving[5] = "New Sku check: scannable code to help vendors automatically track the movements of inventory"; //New Sku check
+        NReceiving[6] = "PRC Check: PIER RECEIVING CHARGE: Checks against Export charges at Pier(ports) "; //PRC Check
+        NReceiving[7] = "QA Check : Quality check by another associate to validate the goods against PR and damages/less Quality etc"; //QA Check
 
         NPutaway[0] = "Required One Liner Definition";
         NPutaway[1] = "Required One Liner Definition";
