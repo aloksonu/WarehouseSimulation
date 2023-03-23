@@ -20,7 +20,7 @@ public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
     public string NPicking = "";
     void Start()
     {
-        NReceiving = "Receiving- is the process of replenishing stocked inventory in the warehouse.";
+        NReceiving = "Dematic receiving systems ensure you have predictability from the time inventory enters your facility to when it leaves your operation.";
         NPutaway = "Putaway- is a broad term that encompasses every stage in the process of receiving goods.";
         _canvasGroup.UpdateState(false, 0);
         btnClose.onClick.AddListener(BringOutNarrator);
