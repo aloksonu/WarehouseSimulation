@@ -1,34 +1,32 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utilities;
 
-public class LevelComplete : MonoSingleton<LevelComplete>
+public class LevelFail : MonoSingleton<LevelFail>
 {
     [SerializeField] private CanvasGroup _canvasGroup;
-    [SerializeField] private Button btnNext, btnHome;
-    [SerializeField] private TextMeshProUGUI gameCompleteTextMeshProUGUI;
+    [SerializeField] private Button btnRetry, btnHome;
+    [SerializeField] private TextMeshProUGUI levelFailTextMeshProUGUI;
     private float _fadeDuration = 0.2f;
-
-    private string _gameCompleteText ="Congratulation To Complete";
-
     void Start()
     {
         _canvasGroup.UpdateState(false, 0);
-        btnNext.onClick.AddListener(OnNextButtonPressed);
+        btnRetry.onClick.AddListener(OnRetryButtonPressed);
         btnHome.onClick.AddListener(OnHomeButtonPressed);
     }
+
     private void OnDestroy()
     {
-        btnNext.onClick.RemoveAllListeners();
+        btnRetry.onClick.RemoveAllListeners();
         btnHome.onClick.RemoveAllListeners();
     }
     internal void BringIn()
     {
-        //gameCompleteTextMeshProUGUI.text = $"{_gameCompleteText}{LevelPanel.Instance.levelName}";
-        gameCompleteTextMeshProUGUI.text = _gameCompleteText + " " + LevelPanel.Instance.levelName;
+        //levelFailTextMeshProUGUI.text = _gameCompleteText + " " + LevelPanel.Instance.levelName;
         _canvasGroup.UpdateState(true, _fadeDuration);
     }
     internal void BringOut()
@@ -36,11 +34,14 @@ public class LevelComplete : MonoSingleton<LevelComplete>
         _canvasGroup.UpdateState(false, _fadeDuration);
     }
 
-    internal void OnNextButtonPressed()
+    internal void OnRetryButtonPressed()
     {
+        UiBgHandeler.Instance.BringOut();
         _canvasGroup.UpdateState(false, _fadeDuration, () => {
-           Player.Instance.SetPlayerTransformPosition();
-           Player.Instance.SetPlayerTransformPosition();
+            Player.Instance.SetPlayerTransformPosition();
+            Player.Instance.SetLevel();
+            PlayerScore.Instance.ResetScore();
+            HealthManager.Instance.ResetHealth();
         });
     }
     internal void OnHomeButtonPressed()

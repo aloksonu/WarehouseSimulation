@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Utilities;
 
@@ -10,13 +11,14 @@ public class Player : MonoSingleton<Player>
     private Rigidbody2D rb;
     private int subLevelNumber;
     private Vector2 playerInitialPosition;
+    [SerializeField] private TextMeshProUGUI processNameTextMeshProUGUI;
     [SerializeField] private GameObject[] gameObjectsSubProcess;
     void Start()
     {
        // LevelPanel.Instance.levelName = "Receiving";  // testin purpose later removed
         subLevelNumber = 1;
         SetLevel();
-        SetPlayerPosition();
+        SetTransform();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -37,53 +39,74 @@ public class Player : MonoSingleton<Player>
 
     internal void SetLevel()
     {
+        GameObject gameObject = gameObjectsSubProcess[0];
+
         if (LevelPanel.Instance.levelName == "Receiving")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[0].SetActive(true);
+            gameObject = gameObjectsSubProcess[0];
         }
         else if (LevelPanel.Instance.levelName == "Putaway")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[1].SetActive(true);
+            gameObject = gameObjectsSubProcess[1];
         }
         else if (LevelPanel.Instance.levelName == "InventoryManagement")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[2].SetActive(true);
+            gameObject = gameObjectsSubProcess[2];
         }
         else if (LevelPanel.Instance.levelName == "Picking")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[3].SetActive(true);
+            gameObject = gameObjectsSubProcess[3];
         }
         else if (LevelPanel.Instance.levelName == "ItemSortation")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[4].SetActive(true);
+            gameObject = gameObjectsSubProcess[4];
         }
         else if (LevelPanel.Instance.levelName == "Packing")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[5].SetActive(true);
+            gameObject = gameObjectsSubProcess[5];
         }
         else if (LevelPanel.Instance.levelName == "Despatch")
         {
             foreach (GameObject g in gameObjectsSubProcess)
                 g.SetActive(false);
             gameObjectsSubProcess[6].SetActive(true);
+            gameObject = gameObjectsSubProcess[6];
         }
+
+        for(int i =0; i< gameObject.transform.childCount; i++)
+        {
+            gameObject.transform.GetChild(i).transform.gameObject.SetActive(true);
+        }
+
+        processNameTextMeshProUGUI.text = LevelPanel.Instance.levelName;
     }
 
-    internal void SetPlayerPosition()
+    internal void SetTransform()
     {
         playerInitialPosition = this.gameObject.transform.position;
+    }
+
+    internal void SetPlayerTransformPosition()
+    {
+        this.gameObject.transform.position = playerInitialPosition;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -278,7 +301,12 @@ public class Player : MonoSingleton<Player>
 
         else 
         {
-            
+            HealthManager.Instance.UpdateHealth(1);
+            if (HealthManager.Instance.GetHealth() <= 0)
+            {
+                LevelFail.Instance.BringIn();
+                UiBgHandeler.Instance.BringIn();
+            }
         }
     }
 }

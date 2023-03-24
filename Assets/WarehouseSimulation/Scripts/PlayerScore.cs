@@ -15,7 +15,7 @@ public class PlayerScore : MonoSingleton<PlayerScore>
     {
         //_canvasGroup.UpdateState(false, 0);
         //subLevelNumber = 1;
-        Reset();
+        ResetScore();
     }
     internal void BringIn()
     {
@@ -26,15 +26,16 @@ public class PlayerScore : MonoSingleton<PlayerScore>
         _canvasGroup.UpdateState(false, _fadeDuration);
     }
 
-    internal void Reset()
+    internal void ResetScore()
     {
         score = 0;
+        scoreTextMeshProUGUI.text = "Score: "+score.ToString();
     }
     internal void UpdateScore(int s)
     {
 
         score += s;
-        scoreTextMeshProUGUI.text = score.ToString();
+        scoreTextMeshProUGUI.text = "Score: " + score.ToString();
       
     }
 
