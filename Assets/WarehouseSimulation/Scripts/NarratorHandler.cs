@@ -14,6 +14,10 @@ public class NarratorHandler : MonoSingleton<NarratorHandler>
     public Sprite spritePutaway;
     public Sprite spriteInventoryManagement;
     public Sprite spritePicking;
+
+    public Sprite spriteItemSortation;
+    public Sprite spritePacking;
+    public Sprite spriteDespatch;
     private const float _fadeDuration = 0.2f;
     // Start is called before the first frame update
     void Start()

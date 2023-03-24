@@ -19,6 +19,9 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
     internal string[] NPutaway = new string[3];
     internal string[] NInventoryManagement = new string[3];
     internal string[] NPicking = new string[3];
+    internal string[] NItemSortation = new string[2];
+    internal string[] NPacking = new string[1];
+    internal string[] NDespatch = new string[3];
 
     public bool isNarratorOpen = false;
     void Start()
@@ -40,9 +43,9 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
         NReceiving[6] = "PRC Check: PIER RECEIVING CHARGE: Checks against Export charges at Pier(ports) "; //PRC Check
         NReceiving[7] = "QA Check : Quality check by another associate to validate the goods against PR and damages/less Quality etc"; //QA Check
 
-        NPutaway[0] = "Required One Liner Definition";
-        NPutaway[1] = "Required One Liner Definition";
-        NPutaway[2] = "Required One Liner Definition";
+        NPutaway[0] = "Putaway Carton- stores and later presents those goods to a point of use."; //Putaway Carton
+        NPutaway[1] = "Required One Liner Definition"; //Hanging
+        NPutaway[2] = "Oversized- it is a shipment, which actual size or weight is greater than the maximum allowed size in the country through which territory shipment is delivered."; //OverSized
 
         NInventoryManagement[0] = "Required One Liner Definition";
         NInventoryManagement[1] = "Required One Liner Definition";
@@ -51,6 +54,15 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
         NPicking[0] = "Required One Liner Definition";
         NPicking[1] = "Required One Liner Definition";
         NPicking[2] = "Required One Liner Definition";
+
+        NItemSortation[0] = "Required One Liner Definition";
+        NItemSortation[1] = "Required One Liner Definition";
+
+        NPacking[0] = "Required One Liner Definition";
+
+        NDespatch[0] = "Required One Liner Definition";
+        NDespatch[1] = "Required One Liner Definition";
+        NDespatch[2] = "Required One Liner Definition";
     }
 
     private void OnDestroy()

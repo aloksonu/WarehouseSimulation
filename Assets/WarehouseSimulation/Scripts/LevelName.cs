@@ -29,6 +29,7 @@ public enum LevelsName
     Putaway = 1,
     InventoryManagement = 2,
     Picking = 3,
-    Transport = 4,
-    Shipping = 5,
+    ItemSortation = 4,
+    Packing = 5,
+    Despatch = 6,
 }

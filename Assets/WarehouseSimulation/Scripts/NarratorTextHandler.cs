@@ -7,7 +7,7 @@ using Utilities;
 
 public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
 {
-    private static Action _onClickCrossButton, _onCompleteNarrator;
+    private static Action _onCompleteNarrator;
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private TextMeshProUGUI panelText;
     [SerializeField] private Button btnClose;
@@ -18,10 +18,18 @@ public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
     public string NPutaway = "Putaway- is a broad term that encompasses every stage in the process of receiving goods.";
     public string NInventoryManagement = "";
     public string NPicking = "";
+    public string NItemSortation = "";
+    public string NPacking = "";
+    public string NDespatch = "";
     void Start()
     {
         NReceiving = "Dematic receiving systems ensure you have predictability from the time inventory enters your facility to when it leaves your operation.";
         NPutaway = "Putaway- is a broad term that encompasses every stage in the process of receiving goods.";
+        NInventoryManagement = "Required One Liner Definition";
+        NPicking = "Required One Liner Definition";
+        NItemSortation = "Required One Liner Definition";
+        NPacking = "Required One Liner Definition";
+        NDespatch = "Required One Liner Definition";
         _canvasGroup.UpdateState(false, 0);
         btnClose.onClick.AddListener(BringOutNarrator);
     }

@@ -61,6 +61,24 @@ public class Player : MonoSingleton<Player>
                 g.SetActive(false);
             gameObjectsSubProcess[3].SetActive(true);
         }
+        else if (LevelPanel.Instance.levelName == "ItemSortation")
+        {
+            foreach (GameObject g in gameObjectsSubProcess)
+                g.SetActive(false);
+            gameObjectsSubProcess[4].SetActive(true);
+        }
+        else if (LevelPanel.Instance.levelName == "Packing")
+        {
+            foreach (GameObject g in gameObjectsSubProcess)
+                g.SetActive(false);
+            gameObjectsSubProcess[5].SetActive(true);
+        }
+        else if (LevelPanel.Instance.levelName == "Despatch")
+        {
+            foreach (GameObject g in gameObjectsSubProcess)
+                g.SetActive(false);
+            gameObjectsSubProcess[6].SetActive(true);
+        }
     }
 
     internal void SetPlayerPosition()
@@ -166,6 +184,87 @@ public class Player : MonoSingleton<Player>
                     NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPicking, () =>
                     {
                         NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePicking, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
+                    });
+
+                });
+            }
+            PlayerScore.Instance.UpdateScore(10);
+            subLevelNumber++;
+        }
+
+        else if (LevelPanel.Instance.levelName == "ItemSortation" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+
+        {
+
+            other.gameObject.SetActive(false);
+            if (subLevelNumber < 2)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NItemSortation[subLevelNumber - 1]);
+            if (subLevelNumber == 2)
+            {
+
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NItemSortation[subLevelNumber - 1], () => {
+
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NItemSortation, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteItemSortation, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
+                    });
+
+                });
+            }
+            PlayerScore.Instance.UpdateScore(10);
+            subLevelNumber++;
+        }
+
+        else if (LevelPanel.Instance.levelName == "Packing" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+
+        {
+
+            other.gameObject.SetActive(false);
+            if (subLevelNumber < 1)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPacking[subLevelNumber - 1]);
+            if (subLevelNumber == 1)
+            {
+
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPacking[subLevelNumber - 1], () => {
+
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NPacking, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spritePacking, () => {
+
+                            LevelComplete.Instance.BringIn();
+                        });
+                    });
+
+                });
+            }
+            PlayerScore.Instance.UpdateScore(10);
+            subLevelNumber++;
+        }
+
+        else if (LevelPanel.Instance.levelName == "Despatch" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
+
+        {
+
+            other.gameObject.SetActive(false);
+            if (subLevelNumber < 3)
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NDespatch[subLevelNumber - 1]);
+            if (subLevelNumber == 3)
+            {
+
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NDespatch[subLevelNumber - 1], () => {
+
+                    UiBgHandeler.Instance.BringIn();
+                    NarratorTextHandler.Instance.BringInNarrator(NarratorTextHandler.Instance.NDespatch, () =>
+                    {
+                        NarratorHandler.Instance.BringIn(NarratorHandler.Instance.spriteDespatch, () => {
 
                             LevelComplete.Instance.BringIn();
                         });
