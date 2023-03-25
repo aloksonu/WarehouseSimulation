@@ -10,7 +10,7 @@ public class StartPanel : MonoSingleton<StartPanel>
     [SerializeField] private Button btnContinue, btnClose;
     [SerializeField] private TMP_InputField inputFieldName;
     [SerializeField] private TextMeshProUGUI nameBlankText;
-    private string name;
+    private string playerName;
     private float _fadeDuration = 0.2f;
     void Start()
     {
@@ -26,8 +26,8 @@ public class StartPanel : MonoSingleton<StartPanel>
     }
     private void OnContinueButtonPressed()
     {
-        name = inputFieldName.text;
-        if (!String.IsNullOrEmpty(name))
+        playerName = inputFieldName.text;
+        if (!String.IsNullOrEmpty(playerName))
         {
             _canvasGroup.UpdateState(false, _fadeDuration,()=> {
 

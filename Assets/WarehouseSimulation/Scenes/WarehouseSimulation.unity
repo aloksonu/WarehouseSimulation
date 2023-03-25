@@ -294,7 +294,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 167974682}
   m_OnClick:
     m_PersistentCalls:
@@ -753,7 +753,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 275993745}
   m_OnClick:
     m_PersistentCalls:
@@ -1098,7 +1098,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 394647870}
   m_OnClick:
     m_PersistentCalls:
@@ -2489,7 +2489,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 772991477}
   m_OnClick:
     m_PersistentCalls:
@@ -5168,7 +5168,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1842637698}
   m_OnClick:
     m_PersistentCalls:
@@ -5305,7 +5305,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1866635035}
   m_OnClick:
     m_PersistentCalls:
@@ -5671,6 +5671,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965741896}
   m_CullTransparentMesh: 1
+--- !u!1 &1995806523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995806525}
+  - component: {fileID: 1995806524}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1995806524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995806523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947e37683d5471040a727708179e37c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  db:
+    levelData:
+    - button: {fileID: 1771996862}
+      levelsName: 0
+      isLocked: 0
+      score: 0
+    - button: {fileID: 167974684}
+      levelsName: 1
+      isLocked: 1
+      score: 0
+    - button: {fileID: 1866635037}
+      levelsName: 2
+      isLocked: 1
+      score: 0
+    - button: {fileID: 772991479}
+      levelsName: 3
+      isLocked: 1
+      score: 0
+    - button: {fileID: 1842637700}
+      levelsName: 4
+      isLocked: 1
+      score: 0
+    - button: {fileID: 275993747}
+      levelsName: 5
+      isLocked: 1
+      score: 0
+    - button: {fileID: 394647869}
+      levelsName: 6
+      isLocked: 1
+      score: 0
+--- !u!4 &1995806525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995806523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2051354343
 GameObject:
   m_ObjectHideFlags: 0
