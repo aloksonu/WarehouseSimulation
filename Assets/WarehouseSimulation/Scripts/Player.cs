@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Utilities;
@@ -13,6 +11,7 @@ public class Player : MonoSingleton<Player>
     private Vector2 playerInitialPosition;
     [SerializeField] private TextMeshProUGUI processNameTextMeshProUGUI;
     [SerializeField] private GameObject[] gameObjectsSubProcess;
+    [SerializeField] private TextMeshPro NameTextMeshPro;
     void Start()
     {
        // LevelPanel.Instance.levelName = "Receiving";  // testin purpose later removed
@@ -20,6 +19,8 @@ public class Player : MonoSingleton<Player>
         SetLevel();
         SetTransform();
         rb = GetComponent<Rigidbody2D>();
+
+        NameTextMeshPro.text = StartPanel.Instance.playerName;
     }
 
     // Update is called once per frame

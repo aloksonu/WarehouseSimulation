@@ -10,7 +10,7 @@ public class StartPanel : MonoSingleton<StartPanel>
     [SerializeField] private Button btnContinue, btnClose;
     [SerializeField] private TMP_InputField inputFieldName;
     [SerializeField] private TextMeshProUGUI nameBlankText;
-    private string playerName;
+    internal string playerName;
     private float _fadeDuration = 0.2f;
     void Start()
     {
