@@ -98,6 +98,7 @@ public class Player : MonoSingleton<Player>
         }
 
         processNameTextMeshProUGUI.text = LevelPanel.Instance.levelName;
+        //TimeManager.Instance.StartModule();
     }
 
     internal void SetTransform()

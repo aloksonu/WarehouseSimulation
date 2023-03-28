@@ -44,12 +44,12 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
         NReceiving[7] = "QA Check : Quality check by another associate to validate the goods against PR and damages/less Quality etc"; //QA Check
 
         NPutaway[0] = "Putaway Carton- stores and later presents those goods to a point of use."; //Putaway Carton
-        NPutaway[1] = "Required One Liner Definition"; //Hanging
-        NPutaway[2] = "Oversized- it is a shipment, which actual size or weight is greater than the maximum allowed size in the country through which territory shipment is delivered."; //OverSized
+        NPutaway[1] = "Hanging is used for putaway of pouches primarily for clothes"; //Hanging
+        NPutaway[2] = "Oversized : Operations of oversized as well as overweight items which needs special handling."; //OverSized
 
-        NInventoryManagement[0] = "Required One Liner Definition";
-        NInventoryManagement[1] = "Required One Liner Definition";
-        NInventoryManagement[2] = "Required One Liner Definition";
+        NInventoryManagement[0] = "Required One Liner Definition";//Relocate
+        NInventoryManagement[1] = "Audit Location is the process of checking the actual location of items against the planned/system driven locations to ensure Picking happens without error."; //Audit Location
+        NInventoryManagement[2] = "Required One Liner Definition";//Consolidation
 
         NPicking[0] = "Required One Liner Definition";
         NPicking[1] = "Required One Liner Definition";
@@ -60,9 +60,9 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
 
         NPacking[0] = "Required One Liner Definition";
 
-        NDespatch[0] = "Required One Liner Definition";
-        NDespatch[1] = "Required One Liner Definition";
-        NDespatch[2] = "Required One Liner Definition";
+        NDespatch[0] = "Parcel sortation: the methods the postal systems and shipment carriers use to determine where and how to route mail and parcels for deliveries";//Parcel Sortation
+        NDespatch[1] = "Required One Liner Definition";// Handle Parcel
+        NDespatch[2] = "Load TM is the process of loading items into the Transportation"; // Load TM
     }
 
     private void OnDestroy()

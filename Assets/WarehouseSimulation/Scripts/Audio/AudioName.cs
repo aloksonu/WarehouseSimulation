@@ -4,9 +4,9 @@
     {
 
         NotSet=-1,
-        IntroGirl = 0,
-        IntroBoy = 1,
-        WhatWarehouse = 2,
-        DefWarehouse = 3,
+        GameBG = 0,
+        ButtonClick = 1,
+        Correct = 2,
+        Wrong = 3,
     }
 }

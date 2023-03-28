@@ -1,3 +1,4 @@
+using Audio.Warehouse;
 using System;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class StartPanel : MonoSingleton<StartPanel>
     void Start()
     {
         //_canvasGroup.UpdateState(false, 0);
+        GenericAudioManager.Instance.PlaySound(AudioName.GameBG);
         nameBlankText.text = "";
         btnContinue.onClick.AddListener(OnContinueButtonPressed);
         btnClose.onClick.AddListener(OnCloseButtonPressed);
@@ -27,6 +29,7 @@ public class StartPanel : MonoSingleton<StartPanel>
     private void OnContinueButtonPressed()
     {
         playerName = inputFieldName.text;
+        GenericAudioManager.Instance.PlaySound(AudioName.ButtonClick);
         if (!String.IsNullOrEmpty(playerName))
         {
             _canvasGroup.UpdateState(false, _fadeDuration,()=> {
@@ -43,10 +46,12 @@ public class StartPanel : MonoSingleton<StartPanel>
     }
     private void OnCloseButtonPressed()
     {
+        //GenericAudioManager.Instance.PlaySound(AudioName.ButtonClick);
         Application.Quit();
     }
     internal void BringIn()
     {
+       // GenericAudioManager.Instance.PlaySound(AudioName.ButtonClick);
         _canvasGroup.UpdateState(true, _fadeDuration);
     }
 }

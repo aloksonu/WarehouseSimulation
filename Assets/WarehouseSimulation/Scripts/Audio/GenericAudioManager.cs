@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using Utilities;
@@ -164,6 +165,22 @@ namespace Audio.Warehouse
                
             }
             return audiolenght;
+        }
+
+        internal void ToggleAllSoundMute(bool muteSfx, bool muteBackground)
+        {
+            TogleSfxMute(muteSfx);
+            ToggleBackgroundMusicMute(muteBackground);
+        }
+
+        internal void ToggleBackgroundMusicMute(bool muteBackground)
+        {
+            masterMixer.DOSetFloat(BackgroundMusicVolume, muteBackground ? minVolume : maxVolume, 0.5f);
+        }
+
+        internal void TogleSfxMute(bool muteSfx)
+        {
+            masterMixer.DOSetFloat(SfxVolume, muteSfx ? minVolume : maxVolume, 0.5f);
         }
     }
 

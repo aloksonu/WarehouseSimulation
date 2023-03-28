@@ -14,8 +14,8 @@ public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
     private string _narratorText;
     private float _fadeDuration = 0.2f;
 
-    public string NReceiving = "Receiving- is the process of replenishing stocked inventory in the warehouse.";
-    public string NPutaway = "Putaway- is a broad term that encompasses every stage in the process of receiving goods.";
+    public string NReceiving = "";
+    public string NPutaway = "";
     public string NInventoryManagement = "";
     public string NPicking = "";
     public string NItemSortation = "";
@@ -24,12 +24,14 @@ public class NarratorTextHandler : MonoSingleton<NarratorTextHandler>
     void Start()
     {
         NReceiving = "Dematic receiving systems ensure you have predictability from the time inventory enters your facility to when it leaves your operation.";
-        NPutaway = "Putaway- is a broad term that encompasses every stage in the process of receiving goods.";
-        NInventoryManagement = "Required One Liner Definition";
-        NPicking = "Required One Liner Definition";
-        NItemSortation = "Required One Liner Definition";
-        NPacking = "Required One Liner Definition";
-        NDespatch = "Required One Liner Definition";
+        NPutaway = "Putaway : a rule-based system of moving received items to the assigned places in warehouses.";
+        NInventoryManagement = "Inventory management in a warehouse is crucial for meeting customer demand," +
+            " reducing waste and losses, and improving overall supply chain efficiency.";
+        NPicking = "Picking : System driven item retrieval based on either voice, visual or handheld driven instruction.";
+        NItemSortation = "Sortation : the process of identifying individual items on a conveyor system and diverting them to correct locations using a variety of devices controlled by task-specific software.";
+        NPacking = "Packing : pack the items using appropriate materials in appropriate container to pack the products, weighing the package, and labeling it with the relevant invoice or packing slip for shipping process to take it fwd.";
+        NDespatch = "Despatch in a warehouse refers to the process of preparing and shipping products or items to customers" +
+            " or other destinations.";
         _canvasGroup.UpdateState(false, 0);
         btnClose.onClick.AddListener(BringOutNarrator);
     }
