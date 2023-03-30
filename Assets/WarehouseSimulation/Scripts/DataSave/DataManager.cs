@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 
-public class DataManager : MonoBehaviour
+public class DataManager : MonoSingleton<DataManager>
 {
     private string DataKey = "GameData";
     public LevelDataWrapper db;
     void Start()
     {
-        // FetchStudentScoreTrainingMode();
+        PlayerPrefs.DeleteAll(); // remove from final build
+        FetchStudentScoreTrainingMode();
     }
 
     private void Update()

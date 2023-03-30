@@ -9,8 +9,8 @@ public class SettingPanel : MonoSingleton<SettingPanel>
     // Start is called before the first frame update
     void Start()
     {
-        //Invoke("OnMusicButtonPressed", 0.2f);
-        //Invoke("OnSoundButtonPressed", 0.2f);
+        Invoke("OnMusicButtonPressed", 0.2f);
+        Invoke("OnSoundButtonPressed", 0.2f);
         //OnMusicButtonPressed();
     }
     private void OnMusicButtonPressed()

@@ -30,6 +30,7 @@ public class LevelComplete : MonoSingleton<LevelComplete>
         //gameCompleteTextMeshProUGUI.text = $"{_gameCompleteText}{LevelPanel.Instance.levelName}";
         gameCompleteTextMeshProUGUI.text = _gameCompleteText + " " + LevelPanel.Instance.levelName;
         _canvasGroup.UpdateState(true, _fadeDuration);
+        UnlockNextLevel();
     }
     internal void BringOut()
     {
@@ -51,5 +52,33 @@ public class LevelComplete : MonoSingleton<LevelComplete>
     IEnumerator UloadScene()
     {
         yield return SceneManager.UnloadSceneAsync("WarehouseGamePlay");
+    }
+
+    private void UnlockNextLevel()
+    {
+        if(LevelPanel.Instance.levelName == "Receiving")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.Putaway, false);
+        }
+        else if (LevelPanel.Instance.levelName == "Putaway")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.InventoryManagement, false);
+        }
+        else if (LevelPanel.Instance.levelName == "InventoryManagement")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.Picking, false);
+        }
+        else if (LevelPanel.Instance.levelName == "Picking")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.ItemSortation, false);
+        }
+        else if (LevelPanel.Instance.levelName == "ItemSortation")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.Packing, false);
+        }
+        else if (LevelPanel.Instance.levelName == "Packing")
+        {
+            DataManager.Instance.UpdateLock(LevelsName.Despatch, false);
+        }
     }
 }
