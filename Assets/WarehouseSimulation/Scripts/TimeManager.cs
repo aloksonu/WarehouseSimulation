@@ -14,7 +14,7 @@ public class TimeManager : MonoSingleton<TimeManager>
     void Start()
     {
         _timeEnumerator = TimerRoutine();
-        StartModule();
+         ClearTimer();
     }
 
     private IEnumerator TimerRoutine()
@@ -32,6 +32,7 @@ public class TimeManager : MonoSingleton<TimeManager>
     internal void StartModule()
     {
         _currentTimeLeft = 0;
+        //if(_timeEnumerator!=null)
         StopCoroutine(_timeEnumerator);
         StartCoroutine(_timeEnumerator);
     }
@@ -39,6 +40,13 @@ public class TimeManager : MonoSingleton<TimeManager>
     public void PauseTimer()
     {
         StopCoroutine(_timeEnumerator);
+    }
+    public void ClearTimer()
+    {
+        _currentTimeLeft = 0;
+        _minutes = (int)_currentTimeLeft / 60;
+        _seconds = (int)_currentTimeLeft % 60;
+        timerTextMeshProUGUI.text = _minutes.ToString() + ":" + _seconds.ToString("00");
     }
     //public void StartTimer()
     //{

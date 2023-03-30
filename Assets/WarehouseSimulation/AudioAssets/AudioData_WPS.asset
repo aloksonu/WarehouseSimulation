@@ -18,7 +18,7 @@ MonoBehaviour:
     soundType: 1
     audioSources:
     - {fileID: 0}
-    volume: 1
+    volume: 0.05
     pitch: 1
     loop: 1
     playOnAwake: 0
@@ -29,6 +29,26 @@ MonoBehaviour:
     audioSources:
     - {fileID: 0}
     volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    rapidSingleShotSound: 0
+  - audioName: 2
+    clip: {fileID: 8300000, guid: c9e447114e1989e438225f2055af7caf, type: 3}
+    soundType: 0
+    audioSources:
+    - {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    rapidSingleShotSound: 0
+  - audioName: 3
+    clip: {fileID: 8300000, guid: 6d49bfa294a351948a5b545c8e825969, type: 3}
+    soundType: 0
+    audioSources:
+    - {fileID: 0}
+    volume: 0.1
     pitch: 1
     loop: 0
     playOnAwake: 0

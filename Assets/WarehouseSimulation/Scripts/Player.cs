@@ -1,3 +1,4 @@
+using Audio.Warehouse;
 using TMPro;
 using UnityEngine;
 using Utilities;
@@ -21,6 +22,8 @@ public class Player : MonoSingleton<Player>
         rb = GetComponent<Rigidbody2D>();
 
         NameTextMeshPro.text = StartPanel.Instance.playerName;
+        //this.Invoke(TimeManager.Instance.StartModule, 0.2f);
+        //TimeManager.Instance.StartModule();
     }
 
     // Update is called once per frame
@@ -100,6 +103,7 @@ public class Player : MonoSingleton<Player>
         processNameTextMeshProUGUI.text = LevelPanel.Instance.levelName;
         subLevelNumber = 1;
         //TimeManager.Instance.StartModule();
+        this.Invoke(TimeManager.Instance.StartModule, 0.2f);
     }
 
     internal void SetTransform()
@@ -138,6 +142,7 @@ public class Player : MonoSingleton<Player>
                 });
             }
             PlayerScore.Instance.UpdateScore(10);
+            GenericAudioManager.Instance.PlaySound(AudioName.Correct);
             subLevelNumber++;
         }
        else if (LevelPanel.Instance.levelName == "Putaway" && subLevelNumber == other.gameObject.GetComponent<SubLevelName>().subLevelNumber)
@@ -164,6 +169,7 @@ public class Player : MonoSingleton<Player>
                 });
             }
             PlayerScore.Instance.UpdateScore(10);
+            GenericAudioManager.Instance.PlaySound(AudioName.Correct);
             subLevelNumber++;
         }
 
@@ -191,6 +197,7 @@ public class Player : MonoSingleton<Player>
                 });
             }
             PlayerScore.Instance.UpdateScore(10);
+            GenericAudioManager.Instance.PlaySound(AudioName.Correct);
             subLevelNumber++;
         }
 
@@ -218,6 +225,7 @@ public class Player : MonoSingleton<Player>
                 });
             }
             PlayerScore.Instance.UpdateScore(10);
+            GenericAudioManager.Instance.PlaySound(AudioName.Correct);
             subLevelNumber++;
         }
 
@@ -304,11 +312,13 @@ public class Player : MonoSingleton<Player>
 
         else 
         {
+            GenericAudioManager.Instance.PlaySound(AudioName.Wrong);
             HealthManager.Instance.UpdateHealth(1);
             if (HealthManager.Instance.GetHealth() <= 0)
             {
                 LevelFail.Instance.BringIn();
                 UiBgHandeler.Instance.BringIn();
+                TimeManager.Instance.ClearTimer();
             }
         }
     }
