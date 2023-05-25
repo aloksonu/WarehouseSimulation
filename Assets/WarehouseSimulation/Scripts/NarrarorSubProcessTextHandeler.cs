@@ -18,7 +18,7 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
     internal string[] NReceiving = new string[8];
     internal string[] NPutaway = new string[3];
     internal string[] NInventoryManagement = new string[3];
-    internal string[] NPicking = new string[3];
+    internal string[] NPicking = new string[2];
     internal string[] NItemSortation = new string[2];
     internal string[] NPacking = new string[1];
     internal string[] NDespatch = new string[3];
@@ -47,21 +47,21 @@ public class NarrarorSubProcessTextHandeler : MonoSingleton<NarrarorSubProcessTe
         NPutaway[1] = "Hanging is used for putaway of pouches primarily for clothes"; //Hanging
         NPutaway[2] = "Oversized : Operations of oversized as well as overweight items which needs special handling."; //OverSized
 
-        NInventoryManagement[0] = "Required One Liner Definition";//Relocate
+        NInventoryManagement[0] = "Relocate: The act of transferring inventory items from one location to another within a system or organization.";//Relocate//ChatGpt
         NInventoryManagement[1] = "Audit Location is the process of checking the actual location of items against the planned/system driven locations to ensure Picking happens without error."; //Audit Location
-        NInventoryManagement[2] = "Required One Liner Definition";//Consolidation
+        NInventoryManagement[2] = "Consolidation: The act of combining or merging inventory from multiple locations into a single location, typically to improve efficiency and reduce costs.";//Consolidation//ChatGpt
 
-        NPicking[0] = "Required One Liner Definition";
-        NPicking[1] = "Required One Liner Definition";
-        NPicking[2] = "Required One Liner Definition";
+        NPicking[0] = "Standard Picking: The established method or process used to select and retrieve items from inventory for fulfilling customer orders.";//Standard Picking//ChatGpt
+        NPicking[1] = "Hanging Picking: A picking technique where items are stored or suspended on hangers, typically used for garments or products with specific hanging requirements, allowing for easy identification and retrieval.";//Hanging Picking//ChatGpt
+        //NPicking[2] = "Required One Liner Definition";
 
-        NItemSortation[0] = "Required One Liner Definition";
-        NItemSortation[1] = "Required One Liner Definition";
+        NItemSortation[0] = "Staging: The process of temporarily storing or grouping items in a designated area before they are further processed or transported to their final destination.";//Staging//ChatGpt
+        NItemSortation[1] = "Trolley Sort: A sortation method where items are placed on trolleys or carts and sorted manually or automatically based on their destination or specific criteria.";//Trolley Sort//ChatGpt
 
-        NPacking[0] = "Required One Liner Definition";
+        NPacking[0] = "Packing: The process of carefully and securely preparing items for shipment or storage by appropriately wrapping, sealing, and packaging them to protect against damage or loss.";//Packing//ChatGpt
 
         NDespatch[0] = "Parcel sortation: the methods the postal systems and shipment carriers use to determine where and how to route mail and parcels for deliveries";//Parcel Sortation
-        NDespatch[1] = "Required One Liner Definition";// Handle Parcel
+        NDespatch[1] = "Handle Parcel: The physical action of receiving, inspecting, processing, and managing parcels or packages during the dispatch process to ensure accurate and timely delivery.";// Handle Parcel//ChatGpt
         NDespatch[2] = "Load TM is the process of loading items into the Transportation"; // Load TM
     }
 

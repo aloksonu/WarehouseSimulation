@@ -10,6 +10,7 @@ public class DataManager : MonoSingleton<DataManager>
     void Start()
     {
         PlayerPrefs.DeleteAll(); // remove from final build
+        UnlockAllLevelForDemo(); // remove from final build
         FetchStudentScoreTrainingMode();
     }
 
@@ -60,6 +61,15 @@ public class DataManager : MonoSingleton<DataManager>
     {
         foreach(LevelData d in db.levelData)
         {
+            d.button.interactable = !d.isLocked;
+        }
+    }
+
+    private void UnlockAllLevelForDemo()
+    {
+        foreach (LevelData d in db.levelData)
+        {
+            d.isLocked = false;
             d.button.interactable = !d.isLocked;
         }
     }
