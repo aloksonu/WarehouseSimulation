@@ -10,7 +10,7 @@ public class SettingPanel : MonoSingleton<SettingPanel>
     void Start()
     {
         Invoke("OnMusicButtonPressed", 0.2f);
-        Invoke("OnSoundButtonPressed", 0.2f);
+        //Invoke("OnSoundButtonPressed", 0.2f);
         //OnMusicButtonPressed();
     }
     private void OnMusicButtonPressed()

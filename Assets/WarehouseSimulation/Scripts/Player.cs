@@ -125,7 +125,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 8)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber-1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber-1],null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 8) {
 
                 NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NReceiving[subLevelNumber - 1],()=> {
@@ -137,9 +137,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.Receiving);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             GenericAudioManager.Instance.PlaySound(AudioName.Correct);
@@ -151,7 +151,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 3)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPutaway[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPutaway[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 3)
             {
 
@@ -164,9 +164,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.Putaway);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             GenericAudioManager.Instance.PlaySound(AudioName.Correct);
@@ -179,7 +179,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 3)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NInventoryManagement[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NInventoryManagement[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 3)
             {
 
@@ -192,9 +192,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.InventoryManagement);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             GenericAudioManager.Instance.PlaySound(AudioName.Correct);
@@ -207,7 +207,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 2)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPicking[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPicking[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 2)
             {
 
@@ -220,9 +220,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.Picking);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             GenericAudioManager.Instance.PlaySound(AudioName.Correct);
@@ -235,7 +235,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 2)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NItemSortation[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NItemSortation[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 2)
             {
 
@@ -248,9 +248,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.ItemSortation);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
@@ -262,7 +262,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 1)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPacking[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NPacking[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 1)
             {
 
@@ -275,9 +275,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.Packing);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
@@ -289,7 +289,7 @@ public class Player : MonoSingleton<Player>
 
             other.gameObject.SetActive(false);
             if (subLevelNumber < 3)
-                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NDespatch[subLevelNumber - 1]);
+                NarrarorSubProcessTextHandeler.Instance.BringInNarrator(NarrarorSubProcessTextHandeler.Instance.NDespatch[subLevelNumber - 1], null, other.gameObject.GetComponent<SubLevelName>().audioName);
             if (subLevelNumber == 3)
             {
 
@@ -302,9 +302,9 @@ public class Player : MonoSingleton<Player>
 
                             LevelComplete.Instance.BringIn();
                         });
-                    });
+                    }, AudioName.Despatch);
 
-                });
+                }, other.gameObject.GetComponent<SubLevelName>().audioName);
             }
             PlayerScore.Instance.UpdateScore(10);
             subLevelNumber++;
