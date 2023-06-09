@@ -182,6 +182,16 @@ namespace Audio.Warehouse
         {
             masterMixer.DOSetFloat(SfxVolume, muteSfx ? minVolume : maxVolume, 0.5f);
         }
-    }
 
+        internal void StopAllSounds()
+        {
+            foreach (AudioElement audioElement in audioDataAsset.data)
+            {
+                foreach (AudioSource audioSource in audioElement.audioSources)
+                {
+                    audioSource.Stop();
+                }
+            }
+        }
+    }
 }
