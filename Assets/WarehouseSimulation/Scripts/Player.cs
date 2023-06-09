@@ -103,7 +103,17 @@ public class Player : MonoSingleton<Player>
         processNameTextMeshProUGUI.text = LevelPanel.Instance.levelName;
         subLevelNumber = 1;
         //TimeManager.Instance.StartModule();
-        this.Invoke(TimeManager.Instance.StartModule, 0.2f);
+
+        if (LevelPanel.Instance.levelName == "Receiving" && subLevelNumber == 1)
+        {
+            Tutorial.Instance.BringIn("dxfdx", () => {
+               // Tutorial.Instance.BringOut();
+                this.Invoke(TimeManager.Instance.StartModule, 0.2f);
+            }, AudioName.Tutorial);
+        }
+        else {
+            this.Invoke(TimeManager.Instance.StartModule, 0.2f);
+        }
     }
 
     internal void SetTransform()

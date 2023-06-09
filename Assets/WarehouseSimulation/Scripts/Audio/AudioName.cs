@@ -51,5 +51,7 @@
         ParcelSortation = 30,
         HandleParcel = 31,
         LoadTM = 32,
+
+        Tutorial = 33,
     }
 }
