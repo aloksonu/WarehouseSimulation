@@ -13,18 +13,33 @@ public class Tutorial : MonoSingleton<Tutorial>
     private static Action _onComplete;
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private TextMeshProUGUI panelText;
-    [SerializeField] private Button btnClose;
+    [SerializeField] private Button btnTutorial , btnClose;
     private string _tText;
     private float _fadeDuration = 0.2f;
     void Start()
     {
+        btnTutorial.onClick.AddListener(OnClickTutorialButton);
         btnClose.onClick.AddListener(BringOut);
        // _canvasGroup.UpdateState(false,0);
     }
 
     private void OnDestroy()
     {
+        btnTutorial.onClick.RemoveAllListeners();
         btnClose.onClick.RemoveAllListeners();
+    }
+
+    private void OnClickTutorialButton()
+    {
+        UptateTimer(true);
+        BringIn("dxfdx", () => {
+            UptateTimer(false);
+        }, AudioName.Tutorial);
+    }
+
+    private void UptateTimer(bool b)
+    {
+        TimeManager.Instance.isTimePaused = b;
     }
 
     internal void BringIn(string tText,

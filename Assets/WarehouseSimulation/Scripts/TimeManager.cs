@@ -11,8 +11,11 @@ public class TimeManager : MonoSingleton<TimeManager>
     IEnumerator _timeEnumerator;
     private int _minutes, _seconds;
     [SerializeField] private TextMeshProUGUI timerTextMeshProUGUI;
+
+    internal bool isTimePaused;
     void Start()
     {
+        isTimePaused = false;
         _timeEnumerator = TimerRoutine();
          ClearTimer();
     }
@@ -21,6 +24,10 @@ public class TimeManager : MonoSingleton<TimeManager>
     {
         while (_currentTimeLeft >= 0)
         {
+            while (isTimePaused == true)
+            {
+                yield return null;
+            }
             _minutes = (int)_currentTimeLeft / 60;
             _seconds = (int)_currentTimeLeft % 60;
             timerTextMeshProUGUI.text = _minutes.ToString() + ":" + _seconds.ToString("00");
