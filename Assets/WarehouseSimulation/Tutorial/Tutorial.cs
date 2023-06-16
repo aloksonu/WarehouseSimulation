@@ -77,4 +77,9 @@ public class Tutorial : MonoSingleton<Tutorial>
         }
     }
 
+    internal void HideTutorialButton()
+    {
+        btnTutorial.transform.gameObject.SetActive(false);
+    }
+
 }

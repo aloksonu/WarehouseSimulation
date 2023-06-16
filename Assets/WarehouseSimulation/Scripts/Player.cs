@@ -113,6 +113,7 @@ public class Player : MonoSingleton<Player>
         }
         else {
             this.Invoke(TimeManager.Instance.StartModule, 0.2f);
+            Tutorial.Instance.HideTutorialButton();
         }
     }
 
