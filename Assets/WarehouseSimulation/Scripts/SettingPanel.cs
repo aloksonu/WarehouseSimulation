@@ -1,25 +1,26 @@
-using Audio.Warehouse;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
+using WarehouseSimulation.Scripts.Audio;
 
-public class SettingPanel : MonoSingleton<SettingPanel>
+namespace WarehouseSimulation.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SettingPanel : MonoSingleton<SettingPanel>
     {
-        Invoke("OnMusicButtonPressed", 0.2f);
-        //Invoke("OnSoundButtonPressed", 0.2f);
-        //OnMusicButtonPressed();
+        // Start is called before the first frame update
+        void Start()
+        {
+            Invoke("OnMusicButtonPressed", 0.2f);
+            //Invoke("OnSoundButtonPressed", 0.2f);
+            //OnMusicButtonPressed();
+        }
+        private void OnMusicButtonPressed()
+        {
+            GenericAudioManager.Instance.ToggleBackgroundMusicMute(true);
+            Debug.Log("Audio Stop");
+        }
+        private void OnSoundButtonPressed()
+        {
+            GenericAudioManager.Instance.TogleSfxMute(true);
+        }
     }
-    private void OnMusicButtonPressed()
-    {
-        GenericAudioManager.Instance.ToggleBackgroundMusicMute(true);
-        Debug.Log("Audio Stop");
-    }
-    private void OnSoundButtonPressed()
-    {
-        GenericAudioManager.Instance.TogleSfxMute(true);
-    }
-  }
+}

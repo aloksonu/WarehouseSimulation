@@ -1,35 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelName : MonoBehaviour
+namespace WarehouseSimulation.Scripts
 {
-    public Button btnLevel;
-    public LevelsName levelsName;
-    //internal string strLevelName;
-    void Start()
+    public class LevelName : MonoBehaviour
     {
-        btnLevel.onClick.AddListener(OnClickLeveButton);
+        public Button btnLevel;
+        public LevelsName levelsName;
+        //internal string strLevelName;
+        void Start()
+        {
+            btnLevel.onClick.AddListener(OnClickLeveButton);
+        }
+
+        private void OnClickLeveButton()
+        {
+            LevelPanel.Instance.levelName = levelsName.ToString();
+            LevelPanel.Instance.OnContinueButtonPressed();
+            Debug.Log(LevelPanel.Instance.levelName);
+        }
     }
 
-    private void OnClickLeveButton()
+    public enum LevelsName
     {
-        LevelPanel.Instance.levelName = levelsName.ToString();
-        LevelPanel.Instance.OnContinueButtonPressed();
-        Debug.Log(LevelPanel.Instance.levelName);
+
+        NotSet = -1,
+        Receiving = 0,
+        Putaway = 1,
+        InventoryManagement = 2,
+        Picking = 3,
+        ItemSortation = 4,
+        Packing = 5,
+        Despatch = 6,
     }
-}
-
-public enum LevelsName
-{
-
-    NotSet = -1,
-    Receiving = 0,
-    Putaway = 1,
-    InventoryManagement = 2,
-    Picking = 3,
-    ItemSortation = 4,
-    Packing = 5,
-    Despatch = 6,
 }

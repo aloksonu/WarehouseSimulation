@@ -1,20 +1,23 @@
 using UnityEngine;
 using Utilities;
 
-public class UiBgHandeler : MonoSingleton<UiBgHandeler>
+namespace WarehouseSimulation.Scripts
 {
-    [SerializeField] private CanvasGroup canvasGroup;
-    private float _fadeDuration = 0.2f;
-    void Start()
+    public class UiBgHandeler : MonoSingleton<UiBgHandeler>
     {
-        canvasGroup.UpdateState(false, 0);
-    }
-    internal void BringIn()
-    {
-        canvasGroup.UpdateState(true, _fadeDuration);
-    }
-    internal void BringOut()
-    {
-        canvasGroup.UpdateState(false, _fadeDuration);
+        [SerializeField] private CanvasGroup canvasGroup;
+        private float _fadeDuration = 0.2f;
+        void Start()
+        {
+            canvasGroup.UpdateState(false, 0);
+        }
+        internal void BringIn()
+        {
+            canvasGroup.UpdateState(true, _fadeDuration);
+        }
+        internal void BringOut()
+        {
+            canvasGroup.UpdateState(false, _fadeDuration);
+        }
     }
 }

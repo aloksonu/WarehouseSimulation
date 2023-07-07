@@ -1,11 +1,11 @@
-﻿using DG.Tweening;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using Utilities;
 using Logger = Utilities.Logger;
 
-namespace Audio.Warehouse
+namespace WarehouseSimulation.Scripts.Audio
 {
     public class GenericAudioManager : PersistentMonoSingleton<GenericAudioManager>
     {
